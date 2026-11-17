@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PitzkiLauncher</AssemblyName>
+    <RootNamespace>PitzkiLauncher</RootNamespace>
+    <Version>1.0.0</Version>
+    <ApplicationIcon Condition="Exists('pitzki.ico')">pitzki.ico</ApplicationIcon>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+    <AutoreleasePoolSupport>false</AutoreleasePoolSupport>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- WinForms is only used for the tray icon and screen lookup -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pitzki.png" Condition="Exists('pitzki.png')" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="pitzki-face.png" Condition="Exists('pitzki-face.png')" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="pitzki.ico" Condition="Exists('pitzki.ico')" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

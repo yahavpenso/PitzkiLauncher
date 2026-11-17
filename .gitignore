@@ -1,0 +1,9 @@
+bin/
+obj/
+dist/
+shots/
+.vs/
+*.user
+Thumbs.db
+desktop.ini
+sounds/
