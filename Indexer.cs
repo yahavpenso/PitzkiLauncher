@@ -118,7 +118,8 @@ public class Indexer
             Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
             Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory),
         };
-        foreach (var d in dirs.Where(d => !string.IsNullOrEmpty(d) && Directory.Exists(d)))
+        // the demo leaves out desktop shortcuts: they are the person's own
+        foreach (var d in dirs.Where(d => !string.IsNullOrEmpty(d) && Directory.Exists(d)).Take(Demo.On ? 2 : 4))
         {
             Walk(d, 0, 4, f =>
             {
@@ -166,6 +167,14 @@ public class Indexer
         }
         catch { }
 
+        // the demo shows only apps everyone has, never the person's own games and programs
+        if (Demo.On)
+        {
+            string[] everyone = { "calculator", "paint", "notepad", "settings", "photos", "camera", "clock", "weather", "microsoft store", "spotify", "discord", "task manager", "file explorer" };
+            list = list.Where(i => i.Title.StartsWith("Pitzki", StringComparison.OrdinalIgnoreCase)
+                || everyone.Contains(i.Title.ToLowerInvariant())
+                || (i.Keywords?.Any(k => everyone.Contains(k.ToLowerInvariant())) ?? false)).ToList();
+        }
         return list;
     }
 
@@ -279,10 +288,10 @@ public class Indexer
     private static List<Item> ScanFiles()
     {
         var list = new List<Item>();
-        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        var home = Demo.On ? Demo.Folder! : Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
         // recently opened files (Windows keeps shortcuts to them)
-        try
+        if (!Demo.On) try
         {
             var recent = Environment.GetFolderPath(Environment.SpecialFolder.Recent);
             if (Directory.Exists(recent))
@@ -300,7 +309,7 @@ public class Indexer
         }
         catch { }
 
-        var roots = new[]
+        var roots = Demo.On ? new List<string> { Demo.Folder! } : new[]
         {
             Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),

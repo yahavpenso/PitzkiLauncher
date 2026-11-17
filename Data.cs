@@ -9,13 +9,24 @@ public class UsageEntry
     public DateTime Last { get; set; }
 }
 
+/// <summary>
+/// PITZKI_LAUNCHER_DEMO=&lt;folder&gt;: for the README clips. Files come only from that folder (no recent files, no desktop),
+/// usage is kept in the folder too, it runs next to the real copy, and it never touches "start with Windows".
+/// </summary>
+public static class Demo
+{
+    public static readonly string? Folder = Environment.GetEnvironmentVariable("PITZKI_LAUNCHER_DEMO");
+    public static bool On => !string.IsNullOrEmpty(Folder);
+}
+
 public class LauncherData
 {
     public int HotkeyIndex { get; set; }
     public bool FirstRunDone { get; set; }
     public Dictionary<string, UsageEntry> Usage { get; set; } = new();
 
-    private static string Dir => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PitzkiLauncher");
+    private static string Dir => Demo.On ? Path.Combine(Demo.Folder!, ".launcher-data")
+        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PitzkiLauncher");
     private static string FilePath => Path.Combine(Dir, "data.json");
 
     public static LauncherData Load()

@@ -1,0 +1,16 @@
+name: An idea
+description: Something the launcher could find or do
+title: "Idea: "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you type, and what should come up?
+      placeholder: "For example: 'timer 5' starts a 5 minute timer"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help you?

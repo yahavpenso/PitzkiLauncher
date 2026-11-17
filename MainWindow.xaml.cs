@@ -497,6 +497,7 @@ public partial class MainWindow : Window
 
     private static void SetStartup(bool on)
     {
+        if (Demo.On) return;     // the demo never touches "start with Windows"
         try
         {
             using var k = Registry.CurrentUser.OpenSubKey(RunKey, true) ?? Registry.CurrentUser.CreateSubKey(RunKey);

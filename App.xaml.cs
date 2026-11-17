@@ -9,15 +9,16 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
-        _mutex = new Mutex(true, "PitzkiLauncher_SingleInstance", out bool isNew);
+        string suffix = Demo.On ? "_Demo" : "";      // the demo runs next to the real copy
+        _mutex = new Mutex(true, "PitzkiLauncher_SingleInstance" + suffix, out bool isNew);
         if (!isNew)
         {
             // already running: ask the running copy to open the search box
-            try { EventWaitHandle.OpenExisting("PitzkiLauncher_Show").Set(); } catch { }
+            try { EventWaitHandle.OpenExisting("PitzkiLauncher_Show" + suffix).Set(); } catch { }
             Shutdown();
             return;
         }
-        _showEvent = new EventWaitHandle(false, EventResetMode.AutoReset, "PitzkiLauncher_Show");
+        _showEvent = new EventWaitHandle(false, EventResetMode.AutoReset, "PitzkiLauncher_Show" + suffix);
         base.OnStartup(e);
 
         var w = new MainWindow(e.Args.Contains("--tray"));
