@@ -9,6 +9,9 @@
   <img alt="No account" src="https://img.shields.io/badge/account-none%20needed-8b949e">
 </p>
 
+> [!TIP]
+> **It's nicer on the website.** Everything here, easier to read, with every clip: **[yahavpenso.github.io/launcher](https://yahavpenso.github.io/launcher/)**
+
 **Press Alt+Space. Type. Done.** One little box that opens anything on your PC: apps, files, folders, Windows settings, quick actions, sums and web searches. Pitzki, the night-sky cube from [Piztki](https://github.com/yahavpenso/Piztki), keeps it company.
 
 Free. No account, no ads, no tracking. Nothing it finds ever leaves your PC.
@@ -23,7 +26,7 @@ Free. No account, no ads, no tracking. Nothing it finds ever leaves your PC.
   &nbsp;·&nbsp; <a href="#how-it-compares">Compare</a>
   &nbsp;·&nbsp; <a href="#privacy">Privacy</a>
   &nbsp;·&nbsp; <a href="#install">Install</a>
-  &nbsp;·&nbsp; <a href="https://github.com/yahavpenso/PitzkiLauncher/wiki">Help pages</a>
+  &nbsp;·&nbsp; <a href="https://yahavpenso.github.io/launcher/">Website</a>
 </p>
 
 > Every clip here is the real app, filmed by a test run. The files in them are made up for the demo, and only apps everyone has are shown.
