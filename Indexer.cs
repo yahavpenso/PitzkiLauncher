@@ -98,9 +98,12 @@ public class Indexer
                         // Windows in Hebrew names Calculator "מחשבון": show the English name under it
                         bool latin = name.Any(c => c is >= 'a' and <= 'z' or >= 'A' and <= 'Z');
                         string sub = !latin && kw.Length > 0 ? "App · " + Cap(kw[0]) : "App";
+                        // the demo (README clips) shows the English name only
+                        string title = name;
+                        if (Demo.On && !latin && kw.Length > 0) { title = Cap(kw[0]); sub = "App"; }
                         list.Add(new Item
                         {
-                            Key = "app:" + name.ToLowerInvariant(), Title = name, Sub = sub, Kind = Kind.App,
+                            Key = "app:" + name.ToLowerInvariant(), Title = title, Sub = sub, Kind = Kind.App,
                             Target = target, IconPath = target, FilePath = file, KindBoost = 60, Keywords = kw
                         }.Prep());
                     }

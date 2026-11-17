@@ -34,20 +34,20 @@ Free. No account, no ads, no tracking. Nothing it finds ever leaves your PC.
 
 <table>
 <tr>
-<td width="50%" valign="top"><b>🚀 Apps</b><br><sub>Every app on the Start menu and from the Microsoft Store, and all the Pitzki apps. Windows in Hebrew? <code>calculator</code> still finds מחשבון.</sub><br><img src="docs/media/apps.gif" alt="Apps" width="100%"></td>
+<td width="50%" valign="top"><b>🚀 Apps</b><br><sub>Every app on the Start menu and from the Microsoft Store, and all the Pitzki apps. Windows in another language? <code>calculator</code> still finds the Calculator app.</sub><br><img src="docs/media/apps.gif" alt="Apps" width="100%"></td>
 <td width="50%" valign="top"><b>📄 Files and folders</b><br><sub>Desktop, Documents, Downloads, Pictures, Videos and Music, plus the files you opened lately. A word from the middle of a name is enough.</sub><br><img src="docs/media/files.gif" alt="Files" width="100%"></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><b>⚙️ Windows settings</b><br><sub>wifi, bluetooth, sound, display, battery, updates... in English or Hebrew (מסך, צליל).</sub><br><img src="docs/media/settings.gif" alt="Settings" width="100%"></td>
+<td width="50%" valign="top"><b>⚙️ Windows settings</b><br><sub>wifi, bluetooth, sound, display, battery, updates and more.</sub><br><img src="docs/media/settings.gif" alt="Settings" width="100%"></td>
 <td width="50%" valign="top"><b>⚡ Quick actions</b><br><sub>Lock, sleep, restart, shut down, recycle bin, task manager, screenshot. Shut down and restart ask you to press Enter twice.</sub><br><img src="docs/media/actions.gif" alt="Actions" width="100%"></td>
 </tr>
 <tr>
 <td width="50%" valign="top"><b>🧮 Calculator</b><br><sub>Type a sum and the answer is already there: <code>12*7+3</code>, <code>2^10</code>, <code>(5+3)/2</code>. Enter copies it.</sub><br><img src="docs/media/calc.gif" alt="Calculator" width="100%"></td>
-<td width="50%" valign="top"><b>⌨️ Typed in Hebrew by mistake?</b><br><sub>Forgot to switch the keyboard? <code>גןדבםרג</code> is "discord" on a Hebrew keyboard, and it still finds Discord.</sub><br><img src="docs/media/hebrew.gif" alt="Hebrew keyboard" width="100%"></td>
+<td width="50%" valign="top"><b>🌐 The web</b><br><sub><code>g pizza</code> searches Google, <code>yt lofi</code> searches YouTube, <code>youtube.com</code> opens the site. Anything it can't find becomes a Google search.</sub><br><img src="docs/media/web.gif" alt="Web" width="100%"></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><b>🌐 The web</b><br><sub><code>g pizza</code> searches Google, <code>yt lofi</code> searches YouTube, <code>youtube.com</code> opens the site. Anything it can't find becomes a Google search.</sub><br><img src="docs/media/web.gif" alt="Web" width="100%"></td>
-<td width="50%" valign="top"><b>⭐ It learns</b><br><sub>What you open most, and what you opened last, moves to the top. After a day it already knows your favourites.</sub><br><img src="docs/media/close.gif" alt="Closing with Esc" width="100%"></td>
+<td width="50%" valign="top"><b>⌨️ Typed with the wrong keyboard?</b><br><sub>Forgot to switch the keyboard language? It still understands what you meant and finds the right app.</sub></td>
+<td width="50%" valign="top"><b>⭐ It learns</b><br><sub>What you open most, and what you opened last, moves to the top. Esc closes it, and it waits in the tray.</sub><br><img src="docs/media/close.gif" alt="Closing with Esc" width="100%"></td>
 </tr>
 </table>
 
@@ -78,7 +78,7 @@ Free. No account, no ads, no tracking. Nothing it finds ever leaves your PC.
 | Opens with one hotkey, anywhere | ✅ Alt+Space | ✅ Win | ✅ Alt+Space |
 | Apps, files, settings, actions in one list | ✅ | ✅ | ✅ |
 | Calculator as you type | ✅ | ✅ | ✅ |
-| Typed in Hebrew by mistake | ✅ | ❌ | ❌ |
+| Typed with the wrong keyboard language | ✅ | ❌ | ❌ |
 | No web results or ads mixed in unless you ask | ✅ | ❌ | ✅ |
 | Learns what you open most | ✅ | Some | ✅ |
 | One small download, nothing else to install | ✅ | built in | ❌ (the whole PowerToys) |
